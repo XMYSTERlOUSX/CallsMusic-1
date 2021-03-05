@@ -4,12 +4,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-SESSION_NAME = "AQBRq7-T49AncPvu2pRDK4x1sLojwYkrc6TzGMQeu73UCTYxQlbb9rnJUAlEWUr-zmL3yKZgyqmO6SCb-LG5mmLN5nO_zjKQWtynzEf9Q5A801ABBuCXZI7dxQchWZkWWy9JXk1ku3uEs6BhUqsmUdNSXDKnD7CSxhwEOzeDSGOnSuEhw8AlsePBTD4BWEOn3PBbBoBiy1HCz2d9UtALSzb6AD96THhDo8KfJkF1ByH-Ta36DSy_pzye-mIrgwLHeb9BdY5JH-0AjTd_bTk2IqiHBVkP-jlevjLTdBB-L37g9es8arDv9-DROXo-6eicNzYPNuCJjZtF5VIu_x0l65ehXZl-wAA"
-BOT_TOKEN = "1594944491:AAEIROa92ii8jf3QPzIVoVj2N2f9upbdqvg"
+SESSION_NAME = getenv("SESSION_NAME", "session")
+BOT_TOKEN = getenv("BOT_TOKEN")
 
-API_ID = 2613209
-API_HASH = "53da8fc68ba94ec95d210e924f1c9fb8"
+API_ID = int(getenv("API_ID"))
+API_HASH = getenv("API_HASH")
 
-DURATION_LIMIT = 30
+DURATION_LIMIT = int(getenv("DURATION_LIMIT", "7"))
 
-SUDO_USERS = 1252058587
+SUDO_USERS = list(map(int, getenv("SUDO_USERS").split()))
