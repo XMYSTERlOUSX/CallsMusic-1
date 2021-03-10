@@ -7,8 +7,8 @@ RUN curl -sL https://deb.nodesource.com/setup_15.x | bash -
 RUN apt-get install -y nodejs
 RUN npm i -g npm
 RUN cd / && \
-    git clone https://github.com/Anjana-Ma/CallsMusic && \
-    cd / && \
+    git clone https://github.com/Anjana-Ma/CallsMusic smp && \
+    cd smp/ && \
     rm -r .git && \
     git clone https://github.com/pytgcalls/pytgcalls && \
     cd pytgcalls/ && \
@@ -19,7 +19,7 @@ RUN cd / && \
     npm install && \
     cd ../../ && \
     pip3 install -r requirements.txt && \
-    cd / && \
+    cd /smp && \
     pip3 install -r requirements.txt
-WORKDIR /
+WORKDIR /smp
 CMD python3 main.py
